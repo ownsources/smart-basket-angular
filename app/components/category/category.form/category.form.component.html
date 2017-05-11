@@ -1,0 +1,9 @@
+<form class="form" (ngSubmit)="onSubmit(); categoryForm.reset()" #categoryForm="ngForm">
+    <input class="form-control"
+           type="text"
+           name="name"
+           [(ngModel)]="name"
+           placeholder="Чё делать то?"
+           required>
+    <button type="submit" [disabled]="categoryForm.form.invalid">Добавить</button>
+</form>

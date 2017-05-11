@@ -1,0 +1,10 @@
+<div class="list">
+    <category-item
+            *ngFor="let category of categorys"
+            [category]="category"
+            [ngClass]="{editing: category.editing}"
+            (delete)="onDelete($event)"
+            (update)="onUpdate($event)"
+            (select)="onSelect($event)"
+    ></category-item>
+</div>

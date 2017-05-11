@@ -1,0 +1,47 @@
+
+.item {
+    padding: 1em;
+    margin: 1px;
+    display: flex;
+    align-items: center;
+}
+.item:hover{
+    background-color: rgba(225, 225, 225, 0.43);
+}
+.item .checkbox {
+    margin-right: .25em;
+}
+
+.item.completed .title {
+    text-decoration: line-through;
+}
+
+.item.completed .title,
+.item.completed .material-icons {
+    color: lightgray;
+}
+
+.item input{
+    margin-right: 1rem;
+}
+
+.item .actions {
+    margin-left: auto;
+    opacity: 0;
+    transition: all .2s;
+}
+
+.item:hover .actions {
+    opacity: 1;
+}
+
+.first{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex: 1;
+}
+
+.name{
+    width:100%;
+}

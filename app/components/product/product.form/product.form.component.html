@@ -1,0 +1,23 @@
+<form class="form" (ngSubmit)="onSubmit(); productForm.reset()" #productForm="ngForm">
+    <input class="form-control"
+           type="text"
+           name="name"
+           [(ngModel)]="name"
+           productholder="Введите место"
+           required>
+    <md2-select
+            #a
+            class="item"
+            [(ngModel)]="category"
+            name="1"
+            require="true"
+            [disabled]="disabled"
+            placeholder="Выберите артиста">
+        <md2-option
+                *ngFor="let category of categorys"
+                [value]="category" >
+            {{category.name}}
+        </md2-option>
+    </md2-select>
+    <button type="submit" [disabled]="productForm.form.invalid">Добавить</button>
+</form>

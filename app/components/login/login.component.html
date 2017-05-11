@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+    <title>Node Authentication</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/FezVrasta/bootstrap-material-design/dist/dist/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&subset=cyrillic">
+    <style>
+        body        { padding-top:80px; }
+    </style>
+</head>
+<body>
+    <h2>Login</h2>
+    <form
+        class="form"
+        name="form"
+        (ngSubmit)="login()"
+        #f="ngForm"
+        novalidate >
+        <div
+            class="form-group"
+            [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <label>Username</label>
+            <input
+                class="form-control"
+                type="text"
+                name="username"
+                [(ngModel)]="model.username"
+                #username="ngModel"
+                required />
+            <div
+                *ngIf="f.submitted && !username.valid"
+                class="help-block">Username is required
+            </div>
+        </div>
+        <div
+            class="form-group"
+            [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+
+            <label> Password</label>
+            <input
+                class="form-control"
+                type="password"
+                name="password"
+                [(ngModel)]="model.password"
+                #password="ngModel"
+                required />
+            <div
+                *ngIf="f.submitted && !password.valid"
+                class="help-block">Password is required
+            </div>
+        </div>
+        <div class="form-group">
+            <button
+                type="submit"
+                class="btn btn-primary">
+                Login
+            </button>
+        </div>
+    </form>
+</body>
+</html>

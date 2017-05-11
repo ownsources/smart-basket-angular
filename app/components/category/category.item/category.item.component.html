@@ -1,0 +1,42 @@
+<div class="item action"
+     [class.completed]= "category.completed"
+     (click)="onSelect()">
+
+    <div class="first">
+        <span
+                class="name"
+                *ngIf="!editMode">
+                {{category.name}}
+        </span>
+
+        <input class="form-control"
+               *ngIf="editMode"
+               [(ngModel)]="category.name"
+               value="name">
+    </div>
+    <div class="actions"
+         (click)="onUpdate()"
+         (click)="editMode = !editMode"
+         *ngIf="editMode">
+        <button class="done icon">
+            <i class="material-icons">done</i>
+        </button>
+    </div>
+
+    <div class="actions"
+         *ngIf="!editMode"
+         (click)="editMode= !editMode">
+        <button class="edit icon">
+            <i class="material-icons">edit</i>
+        </button>
+    </div>
+
+    <div class="actions"
+         (click)="onDelete()"
+         *ngIf="!editMode">
+        <button class="delete icon">
+            <i class="material-icons">delete</i>
+        </button>
+    </div>
+
+</div>
